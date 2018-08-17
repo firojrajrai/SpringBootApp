@@ -16,9 +16,15 @@ public class HelloController {
 	}
 	
 	@RequestMapping("/hello")
-	public String sayHello(@RequestParam("name") String name,Model model) {
+	public String verifyUser(@RequestParam("name") String name,@RequestParam("pass") String pass,Model model) {
+	if(name.equals(pass)) {
 	model.addAttribute("name",name);
+	model.addAttribute("pass",pass);
 	return "hello";
-		
+		}
+	else {
+			model.addAttribute("error","Invalid User Name or Password");
+			return "index";
+	}
 	}
 }
