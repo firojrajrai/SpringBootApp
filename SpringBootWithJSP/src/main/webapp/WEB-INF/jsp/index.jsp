@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -14,8 +15,8 @@
 </div> 
 <hr>
 <div class="form" align="center">
-<form action="hello" method="POST" onsubmit="return validate()">
-	<table>
+<form:form action="verify" method="POST" onsubmit="return validate()">
+	<table  style="background-color: gray; border-style:outset; ">
 	<tr>
 	<td>user name: </td>
 	<td><input id="name" type="text" name="name"></td>
@@ -24,12 +25,12 @@
 	<td>password: </td>
 	<td><input id="pass" type="password" name="pass"></td>
 	</tr>
-	<tr>
-	<td><input type="submit" value="SUBMIT"></td>
+	<tr align="center">
+	<td colspan="2"><input type="submit" value="SUBMIT"></td>
 	<tr>
 	</table>
-	<a href="register.jsp">New User? Click Me...</a>
-</form>
+	<a href="showRegister">New User? Click Me...</a>
+</form:form>
 
 
 </div>

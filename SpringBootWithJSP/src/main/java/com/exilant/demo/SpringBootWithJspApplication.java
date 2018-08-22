@@ -7,6 +7,8 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import com.exilant.demo.command.Employee;
+
 @SpringBootApplication
 public class SpringBootWithJspApplication {
 
@@ -23,5 +25,10 @@ public class SpringBootWithJspApplication {
 	return resolver;
 	}
 	
+	@Bean
+	public Employee getEmployee() {
+	Employee emp = new Employee();
+	return emp;
+	}
 	
 }
