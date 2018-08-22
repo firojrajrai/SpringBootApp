@@ -1,14 +1,14 @@
 package com.exilant.demo.command;
 
 public class Employee {
-int eid;
-String name;
-int age;
-long phone;
-String gender;
-String designation;
-String username;
-String password;
+private int eid;
+private String name;
+private int age;
+private long phone;
+private String gender;
+private String designation;
+private String username;
+private String password;
 public int getEid() {
 	return eid;
 }

@@ -29,7 +29,7 @@
 	<td colspan="2"><input type="submit" value="SUBMIT"></td>
 	<tr>
 	</table>
-	<a href="showRegister">New User? Click Me...</a>
+	<a href="<c:url value="showRegister"/>">New User? Click Me...</a>
 </form:form>
 
 

@@ -29,7 +29,7 @@ function confirm(){
 </div> 
 <hr>
 <div class="form" align="center">
-<form action="saveEmp" method="POST" onsubmit="return confirm()">
+<form:form action="saveEmp" method="POST" modelAttribute="employee" onsubmit="return confirm()">
 	<table style="background-color: gray; border-style:outset; ">
 	
 	<tr>
@@ -51,8 +51,8 @@ function confirm(){
 	<tr>
 	<td>Gender: </td>
 	<td>
-	<form:radiobutton path="sex" value="M"/>Male 
-	<form:radiobutton path="sex" value="F"/>Female 
+	<form:radiobutton path="gender" value="M"/>Male 
+	<form:radiobutton path="gender" value="F"/>Female 
 	</td>
 	</tr>
 	<tr>
@@ -69,13 +69,13 @@ function confirm(){
 	</tr>
 	<tr>
 	<td>Confirm password: </td>
-	<td><form:input id="p2" path="confpassword"/></td>
+	<td><form:input id="p2" path="password"/></td>
 	</tr>
 	<tr align="center">
 	<td colspan="2"><input type="submit" value="SUBMIT"/></td>
 	</tr>
 	</table>
-</form>
+</form:form>
 
 
 </div>
