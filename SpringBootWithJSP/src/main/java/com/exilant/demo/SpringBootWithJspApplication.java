@@ -10,10 +10,10 @@ import org.springframework.web.servlet.view.JstlView;
 
 import com.exilant.demo.command.Employee;
 
-//@SpringBootApplication
-@Configuration
+@SpringBootApplication
+/*@Configuration
 @EnableAutoConfiguration
-@ComponentScan({"com"})
+@ComponentScan({"com"})*/
 public class SpringBootWithJspApplication {
 
 	public static void main(String[] args) {

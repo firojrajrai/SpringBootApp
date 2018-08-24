@@ -45,4 +45,7 @@ public class EmployeeController {
 		model.addAttribute("employee",emp);
 		return "register";
 	}
+	
+	
+	
 }
