@@ -12,22 +12,10 @@ import com.exilant.demo.command.Employee;
 
 @SpringBootApplication
 /*@Configuration
-@EnableAutoConfiguration
-@ComponentScan({"com"})*/
+@EnableAutoConfiguration*/
+@ComponentScan({"com"})
 public class SpringBootWithJspApplication {
-
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		SpringApplication.run(SpringBootWithJspApplication.class, args);
 	}
-	
-	@Bean
-	public ViewResolver getViewResolver() {
-	InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-	resolver.setPrefix("WEB-INF/jsp/");
-	resolver.setSuffix(".jsp");
-	resolver.setViewClass(JstlView.class);
-	return resolver;
-	}
-
-	
 }

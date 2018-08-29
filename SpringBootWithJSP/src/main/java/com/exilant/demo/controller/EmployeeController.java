@@ -1,23 +1,20 @@
 package com.exilant.demo.controller;
-
-import java.util.Map;
-
+import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-
-import com.exilant.demo.command.Employee;
+import com.exilant.demo.service.EmployeeService;
+import com.exilant.demo.to.EmployeeTO;
 
 @Controller
 @SessionAttributes
 public class EmployeeController {
+
+	@Autowired
+	EmployeeService empser;
 
 	@RequestMapping("/")
 	public String index() {
@@ -38,14 +35,19 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping(value="/showRegister")
-	public String showRegister(@ModelAttribute Employee emp,Model model) {
+	public String showRegister(@ModelAttribute EmployeeTO eto,Model model) {
 		System.out.println("*********SHOW REGISTER********");
-		emp = new Employee();
-		emp.setEid(101);
-		model.addAttribute("employee",emp);
+		eto = new EmployeeTO();
+		eto.setEid(101);
+		model.addAttribute("employee",eto);
 		return "register";
 	}
 	
-	
-	
+	@RequestMapping(value="/addEmployee")
+	public String addEmployee(@ModelAttribute EmployeeTO eto) {
+		System.out.println("Adding New Employee...");	
+		empser.addEmployee(eto);
+		System.out.println("Employee Added Successfully.....");
+		return "index";	
+	}
 }

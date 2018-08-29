@@ -7,30 +7,34 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @Table(name="emp")
-@EntityListeners(AuditingEntityListener.class)
 public class Employee {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="eid")
 	private int eid;
 	
-	@NotBlank
+	 
 	@Column(name="name")
 	private String name;
 	
-	@NotBlank
+
 	@Column(name="age")
 	private int age;
 	
-	@NotBlank
+	@Column
 	private long phone;
-	@NotBlank
+	
+	@Column
 	private String gender;
-	@NotBlank
+	
+	@Column
 	private String designation;
-	@NotBlank
+	
+	@Column
 	private String username;
-	@NotBlank
+
+	@Column
 	private String password;
 	
 	public Employee() {}

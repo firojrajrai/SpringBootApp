@@ -29,7 +29,7 @@ function confirm(){
 </div> 
 <hr>
 <div class="form" align="center">
-<form:form action="saveEmp" method="POST" modelAttribute="employee" onsubmit="return confirm()">
+<form:form action="addEmployee" method="POST" modelAttribute="employee" onsubmit="return confirm()">
 	<table style="background-color: gray; border-style:outset; ">
 	
 	<tr>
